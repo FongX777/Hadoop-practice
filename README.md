@@ -10,15 +10,13 @@ The project list:
 
 
 In every project, there are 
-	* README.md  
+	* Report.pdf
+		explain the project and how to implement it 
 	* Spec.pdf
 		describe the problem
 	* Code.java  
 		the java code
-	* Report.pdf
-		explain the project and how to implement it 
   * input.txt
 		the input of data
-
 	* Output data.txt
 		the output of data 

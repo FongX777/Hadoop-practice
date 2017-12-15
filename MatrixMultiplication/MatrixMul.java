@@ -93,32 +93,6 @@ public class MatrixMul {
 
     }
 
-    public static class MatrixMulReducer
-        extends Reducer<Text, Text, Text, IntWritable>{
-
-        private IntWritable result = new IntWritable();
-
-        public void reduce(Text key, Iterable<Text> values, Context context)
-            throws IOException, InterruptedException{
-
-            int sum = 0;
-            int counter = 0;
-            for (Text val : values) {
-                sum += Integer.parseInt(val.toString());
-                if(counter == 0)
-                    break;
-            }
-            
-            //To remove the redundant 0
-            String keys[] = key.toString().split(",");
-            String newKey = Integer.toString(Integer.parseInt(keys[0])) + ","
-                            + Integer.toString(Integer.parseInt(keys[1]));
-                            
-
-            result.set(sum);
-            context.write(new Text(newKey), result);
-        }
-    }
 
     public static class MatrixMulCombiner
         extends Reducer<Text, Text, Text, Text>{
@@ -161,7 +135,7 @@ public class MatrixMul {
     }
 
 
-    public static class MatrixMulReducer_origin
+    public static class MatrixMulReducer
         extends Reducer<Text, Text, Text, IntWritable>{
         
         private Text ReduceOutputKey = new Text();
@@ -246,7 +220,7 @@ public static void main(String[] args) throws Exception {
     job.setOutputValueClass(IntWritable.class);
 
     job.setMapperClass(MatrixMulMapper.class);
-    job.setReducerClass(MatrixMulReducer_origin.class);
+    job.setReducerClass(MatrixMulReducer.class);
 
 
 
