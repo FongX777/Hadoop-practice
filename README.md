@@ -10,13 +10,13 @@ The project list:
 
 
 In every project, there are 
-* Report.pdf
+* Report.pdf  
 	explain the project and how to implement it 
-* Spec.pdf
+* Spec.pdf  
 	describe the problem
-* Code.java  
+* Code.java    
 	the java code
-* input.txt
+* input.txt  
 	the input of data
-* Output data.txt
+* Output data.txt  
 	the output of data 
